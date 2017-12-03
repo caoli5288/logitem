@@ -1,0 +1,4 @@
+name: LogItem
+main: com.i5mc.logitem.Main
+version: 1
+depend: [PlaceholderAPI]

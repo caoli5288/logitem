@@ -1,0 +1,6 @@
+item:
+- id: 57
+  sub_id:
+  name:
+  limit: 100
+  command: "kick %player_name%"
