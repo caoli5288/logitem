@@ -115,7 +115,7 @@ public class Main extends JavaPlugin implements Listener {
         });
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void handle(BlockBreakEvent e) {
         BlockState state = e.getBlock().getState();
         if (state instanceof Chest) {
@@ -132,7 +132,7 @@ public class Main extends JavaPlugin implements Listener {
                 command = PlaceholderAPI.setPlaceholders(e.getPlayer(), command);
                 this.getServer().dispatchCommand(this.getServer().getConsoleSender(), command);
             });
-            e.setCancelled(!result.isEmpty());
+            if (!result.isEmpty()) e.setCancelled(true);
         }
     }
 
